@@ -341,16 +341,16 @@ func TestFlavorAccessRemove(t *testing.T) {
 	}
 }
 
-//func TestFlavorExtraSpecsList(t *testing.T) {
-//	th.SetupHTTP()
-//	defer th.TeardownHTTP()
-//	HandleExtraSpecsListSuccessfully(t)
-//
-//	expected := ExtraSpecs
-//	actual, err := flavors.ListExtraSpecs(fake.ServiceClient(), "1").Extract()
-//	th.AssertNoErr(t, err)
-//	th.CheckDeepEquals(t, expected, actual)
-//}
+func TestFlavorExtraSpecsList(t *testing.T) {
+	th.SetupHTTP()
+	defer th.TeardownHTTP()
+	HandleExtraSpecsListSuccessfully(t)
+
+	expected := ExtraSpecs
+	actual, err := flavors.ListExtraSpecs(fake.ServiceClient(), "1").Extract()
+	th.AssertNoErr(t, err)
+	th.CheckDeepEquals(t, expected, actual)
+}
 
 func TestFlavorExtraSpecGet(t *testing.T) {
 	th.SetupHTTP()

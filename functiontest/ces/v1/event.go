@@ -1,5 +1,5 @@
 package main
-/*
+
 import (
 	"encoding/json"
 	"fmt"
@@ -9,13 +9,11 @@ import (
 	"github.com/Huawei/gophercloud/functiontest/common"
 	"github.com/Huawei/gophercloud/openstack"
 	"github.com/Huawei/gophercloud/openstack/ces/v1/events"
-
 )
 
 func main() {
 
 	fmt.Println("main start...")
-
 	provider, err := common.AuthAKSK()
 	//provider, err := common.AuthToken()
 	if err != nil {
@@ -28,7 +26,6 @@ func main() {
 	}
 
 	sc, err := openstack.NewCESV1(provider, gophercloud.EndpointOpts{})
-
 	if err != nil {
 		fmt.Println("get ces client failed")
 		if ue, ok := err.(*gophercloud.UnifiedError); ok {
@@ -59,7 +56,7 @@ func EventCreate(sc *gophercloud.ServiceClient) {
 		},
 	}
 
-	events, err := events.Create(sc, opts).Extract()
+	eventRes, err := events.Create(sc, opts).Extract()
 	if err != nil {
 		fmt.Println(err)
 		if ue, ok := err.(*gophercloud.UnifiedError); ok {
@@ -69,7 +66,6 @@ func EventCreate(sc *gophercloud.ServiceClient) {
 		return
 	}
 
-	bytes, _ := json.MarshalIndent(events, "", " ")
+	bytes, _ := json.MarshalIndent(eventRes, "", " ")
 	fmt.Println(string(bytes))
 }
-*/

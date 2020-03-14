@@ -1,9 +1,8 @@
 package main
 
-/*
 import (
-	"fmt"
 	"encoding/json"
+	"fmt"
 
 	"github.com/Huawei/gophercloud"
 	"github.com/Huawei/gophercloud/functiontest/common"
@@ -27,7 +26,6 @@ func main() {
 	}
 
 	sc, err := openstack.NewCESV1(provider, gophercloud.EndpointOpts{})
-
 	if err != nil {
 		fmt.Println("get ces client failed")
 		if ue, ok := err.(*gophercloud.UnifiedError); ok {
@@ -42,7 +40,7 @@ func main() {
 }
 
 func QuotaList(sc *gophercloud.ServiceClient) {
-	quotas , err := quotas.Get(sc).Extract()
+	quotaRes, err := quotas.Get(sc).Extract()
 	if err != nil {
 		fmt.Println(err)
 		if ue, ok := err.(*gophercloud.UnifiedError); ok {
@@ -52,8 +50,6 @@ func QuotaList(sc *gophercloud.ServiceClient) {
 		return
 	}
 
-	bytes, _ := json.MarshalIndent(quotas, "", " ")
+	bytes, _ := json.MarshalIndent(quotaRes, "", " ")
 	fmt.Println(string(bytes))
 }
-
-*/
